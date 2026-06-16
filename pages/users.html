@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Area Utenti | GlobalNexus Logistics S.A.</title>
+      <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+<div class="app-container">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-logo">GNL</div>
+      <div class="brand-text">
+        <div class="brand-name">GlobalNexus</div>
+        <div class="brand-sub">Logistics S.A.</div>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <span class="nav-label">Dashboard</span>
+      <a class="nav-link" href="dashboard.html" data-page="dashboard"><span class="nav-icon">🏠</span> Home</a>
+      <span class="nav-label">Gestione</span>
+      <a class="nav-link" href="users.html" data-page="users"><span class="nav-icon">👥</span> Area Utenti</a>
+      <a class="nav-link" href="orders.html" data-page="orders"><span class="nav-icon">📦</span> Area Ordini</a>
+      <a class="nav-link" href="vehicles.html" data-page="vehicles"><span class="nav-icon">🚚</span> Area Mezzi</a>
+      <a class="nav-link" href="warehouses.html" data-page="warehouses"><span class="nav-icon">🏭</span> Area Depositi</a>
+      <a class="nav-link" href="containers.html" data-page="containers"><span class="nav-icon">🗃️</span> Area Container</a>
+      <span class="nav-label">Logistica</span>
+      <a class="nav-link" href="departures.html" data-page="departures"><span class="nav-icon">✈️</span> Area Partenze</a>
+      <a class="nav-link" href="destinations.html" data-page="destinations"><span class="nav-icon">📍</span> Area Destinazioni</a>
+    </nav>
+    <div class="sidebar-footer">
+      <button class="logout-btn" id="logoutBtn"><span>⏻</span> Disconnetti</button>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <header class="top-header">
+      <div class="header-left">
+        <button class="sidebar-toggle" id="sidebarToggle">☰</button>
+        <h1 class="page-title">Area Utenti</h1>
+      </div>
+      <div class="header-right">
+        <div class="status-indicator"><div class="status-dot"></div><span>Sistemi operativi</span></div>
+        <div class="user-badge">
+          <div class="user-avatar" id="currentUserInitial">A</div>
+          <span class="user-name" id="currentUser">admin</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="content-body">
+      <!-- Stats -->
+      <div class="stats-grid" id="statsGrid">
+        <div class="stat-card"><div class="stat-label">Totale Utenti</div><div class="stat-value gold" id="statTotal">—</div><div class="stat-desc">Registrati nel sistema</div></div>
+        <div class="stat-card"><div class="stat-label">Utenti Attivi</div><div class="stat-value success" id="statActive">—</div><div class="stat-desc">Accesso abilitato</div></div>
+        <div class="stat-card"><div class="stat-label">Inattivi / Sospesi</div><div class="stat-value warning" id="statInactive">—</div><div class="stat-desc">Accesso limitato</div></div>
+        <div class="stat-card"><div class="stat-label">Uffici</div><div class="stat-value info" id="statOffices">—</div><div class="stat-desc">Sedi rappresentate</div></div>
+      </div>
+
+      <!-- Table -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Registro Personale</div>
+            <div class="card-subtitle">Dipendenti e collaboratori GlobalNexus Logistics</div>
+          </div>
+        </div>
+        <div class="table-toolbar">
+          <div class="search-wrap">
+            <span class="search-icon">🔍</span>
+            <input class="search-input" type="text" id="tableSearch" placeholder="Cerca utente…">
+          </div>
+          <div class="record-count" id="recordCount">Caricamento…</div>
+        </div>
+        <div id="tableContainer"></div>
+      </div>
+    </div>
+  </main>
+
+</div>
+
+<script src="../js/jquery-3.7.1.min.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/nav.js"></script>
+<script src="../js/tables.js"></script>
+<script src="../js/data.js"></script>
+<script>
+  $(document).ready(function () {
+    requireAuth();
+    setActiveNav('users');
+    initHeader();
+
+    var columns = [
+      { key: 'id',                  label: 'ID' },
+      { key: 'nome',                label: 'Nome Completo' },
+      { key: 'ruolo',               label: 'Ruolo' },
+      { key: 'email',               label: 'Email' },
+      { key: 'ufficio',             label: 'Ufficio' },
+      { key: 'data_registrazione',  label: 'Registrazione' },
+      { key: 'stato',               label: 'Stato', render: function(v) { return statusBadge(v); } }
+    ];
+
+    loadTable('../data/users.json', '#tableContainer', columns, function (data) {
+      var active   = data.filter(function(u){ return u.stato === 'Attivo'; }).length;
+      var inactive = data.length - active;
+      var offices  = [...new Set(data.map(function(u){ return u.ufficio; }))].length;
+      $('#statTotal').text(data.length);
+      $('#statActive').text(active);
+      $('#statInactive').text(inactive);
+      $('#statOffices').text(offices);
+    });
+  });
+</script>
+</body>
+</html>
+
+

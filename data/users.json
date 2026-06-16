@@ -1,0 +1,137 @@
+[
+  {
+    "id": "USR-001",
+    "nome": "Marco Pellegrini",
+    "ruolo": "Operations Manager",
+    "email": "m.pellegrini@globalnexus.com",
+    "ufficio": "Roma, Italia",
+    "stato": "Attivo",
+    "data_registrazione": "2019-03-15"
+  },
+  {
+    "id": "USR-002",
+    "nome": "Sophie Laurent",
+    "ruolo": "Logistics Coordinator",
+    "email": "s.laurent@globalnexus.com",
+    "ufficio": "Parigi, Francia",
+    "stato": "Attivo",
+    "data_registrazione": "2020-07-22"
+  },
+  {
+    "id": "USR-003",
+    "nome": "James Whitfield",
+    "ruolo": "Senior Analyst",
+    "email": "j.whitfield@globalnexus.com",
+    "ufficio": "Londra, UK",
+    "stato": "Attivo",
+    "data_registrazione": "2018-11-05"
+  },
+  {
+    "id": "USR-004",
+    "nome": "Yuki Tanaka",
+    "ruolo": "Regional Director APAC",
+    "email": "y.tanaka@globalnexus.com",
+    "ufficio": "Tokyo, Giappone",
+    "stato": "Attivo",
+    "data_registrazione": "2017-06-30"
+  },
+  {
+    "id": "USR-005",
+    "nome": "Ahmed Al-Rashid",
+    "ruolo": "Customs Specialist",
+    "email": "a.alrashid@globalnexus.com",
+    "ufficio": "Dubai, UAE",
+    "stato": "Attivo",
+    "data_registrazione": "2021-01-18"
+  },
+  {
+    "id": "USR-006",
+    "nome": "Lucia Fernandez",
+    "ruolo": "Fleet Manager",
+    "email": "l.fernandez@globalnexus.com",
+    "ufficio": "Madrid, Spagna",
+    "stato": "Attivo",
+    "data_registrazione": "2019-09-12"
+  },
+  {
+    "id": "USR-007",
+    "nome": "David Okonkwo",
+    "ruolo": "Warehouse Supervisor",
+    "email": "d.okonkwo@globalnexus.com",
+    "ufficio": "Lagos, Nigeria",
+    "stato": "Inattivo",
+    "data_registrazione": "2020-04-03"
+  },
+  {
+    "id": "USR-008",
+    "nome": "Elena Voronova",
+    "ruolo": "Procurement Analyst",
+    "email": "e.voronova@globalnexus.com",
+    "ufficio": "Varsavia, Polonia",
+    "stato": "Attivo",
+    "data_registrazione": "2022-02-14"
+  },
+  {
+    "id": "USR-009",
+    "nome": "Carlos Mendoza",
+    "ruolo": "Route Planner",
+    "email": "c.mendoza@globalnexus.com",
+    "ufficio": "Buenos Aires, Argentina",
+    "stato": "Attivo",
+    "data_registrazione": "2021-08-27"
+  },
+  {
+    "id": "USR-010",
+    "nome": "Priya Sharma",
+    "ruolo": "IT Systems Manager",
+    "email": "p.sharma@globalnexus.com",
+    "ufficio": "Mumbai, India",
+    "stato": "Attivo",
+    "data_registrazione": "2020-11-09"
+  },
+  {
+    "id": "USR-011",
+    "nome": "Thomas Gruber",
+    "ruolo": "Finance Controller",
+    "email": "t.gruber@globalnexus.com",
+    "ufficio": "Francoforte, Germania",
+    "stato": "Attivo",
+    "data_registrazione": "2018-05-21"
+  },
+  {
+    "id": "USR-012",
+    "nome": "Isabella Rossi",
+    "ruolo": "Customer Relations Manager",
+    "email": "i.rossi@globalnexus.com",
+    "ufficio": "Milano, Italia",
+    "stato": "Sospeso",
+    "data_registrazione": "2023-01-05"
+  },
+  {
+    "id": "USR-013",
+    "nome": "Li Wei",
+    "ruolo": "Trade Compliance Officer",
+    "email": "l.wei@globalnexus.com",
+    "ufficio": "Shanghai, Cina",
+    "stato": "Attivo",
+    "data_registrazione": "2019-12-01"
+  },
+  {
+    "id": "USR-014",
+    "nome": "Fatima Al-Zahrawi",
+    "ruolo": "Logistics Analyst",
+    "email": "f.alzahrawi@globalnexus.com",
+    "ufficio": "Riyadh, Arabia Saudita",
+    "stato": "Attivo",
+    "data_registrazione": "2022-06-15"
+  },
+  {
+    "id": "USR-015",
+    "nome": "Andrei Popescu",
+    "ruolo": "Transport Coordinator",
+    "email": "a.popescu@globalnexus.com",
+    "ufficio": "Bucarest, Romania",
+    "stato": "Attivo",
+    "data_registrazione": "2023-03-20"
+  }
+]

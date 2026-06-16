@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accesso Sicuro | GlobalNexus Logistics S.A.</title>
+  <meta name="description" content="Portale di accesso sicuro per il personale GlobalNexus Logistics S.A.">
+      <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+  <div class="login-page">
+    <div class="login-wrapper">
+
+      <!-- LEFT PANEL -->
+      <div class="login-panel-left">
+        <div class="panel-brand">
+          <div class="panel-logo">GNL</div>
+          <div class="panel-company">
+            <div class="panel-company-name">GlobalNexus Logistics</div>
+            <div class="panel-company-sub">S.A. — Isole Cayman</div>
+          </div>
+        </div>
+
+        <div class="panel-tagline">
+          <h2>Connecting the world,<br><span>one shipment at a time.</span></h2>
+          <p>Accedi al portale interno per gestire spedizioni, flotta, depositi e operazioni logistiche globali.</p>
+        </div>
+
+        <div class="panel-stats">
+          <div class="panel-stat">
+            <div class="panel-stat-icon">🌍</div>
+            <div class="panel-stat-text">
+              <strong>140+ Paesi</strong>
+              <span>Copertura operativa globale</span>
+            </div>
+          </div>
+          <div class="panel-stat">
+            <div class="panel-stat-icon">🚢</div>
+            <div class="panel-stat-text">
+              <strong>12 Mezzi attivi</strong>
+              <span>Flotta aria, terra e mare</span>
+            </div>
+          </div>
+          <div class="panel-stat">
+            <div class="panel-stat-icon">📦</div>
+            <div class="panel-stat-text">
+              <strong>98.4% On-time</strong>
+              <span>Puntualità consegne 2024</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT PANEL: FORM -->
+      <div class="login-panel-right">
+        <h2 class="login-form-title">Accesso Portale</h2>
+        <p class="login-form-sub">Inserire le credenziali aziendali per procedere</p>
+
+        <div class="login-error" id="loginError">
+          ⚠ Credenziali non valide. Riprovare.
+        </div>
+
+        <form id="loginForm" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="username">Nome Utente</label>
+            <div class="input-wrap">
+              <span class="input-icon">👤</span>
+              <input
+                class="form-input"
+                type="text"
+                id="username"
+                name="username"
+                placeholder="username aziendale"
+                autocomplete="username"
+                required
+              >
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="password">Password</label>
+            <div class="input-wrap">
+              <span class="input-icon">🔒</span>
+              <input
+                class="form-input"
+                type="password"
+                id="password"
+                name="password"
+                placeholder="••••••••••"
+                autocomplete="current-password"
+                required
+              >
+            </div>
+          </div>
+
+          <button class="login-btn" type="submit" id="loginBtn">
+            Accedi al Portale
+          </button>
+        </form>
+
+        <div class="login-security">
+          <div class="sec-dot"></div>
+          Connessione cifrata con TLS 1.3 — Accesso monitorato
+        </div>
+
+        <div class="login-footer">
+          &copy; 2024 GlobalNexus Logistics S.A. — All rights reserved<br>
+          Registered: 94 Solaris Avenue, George Town, Grand Cayman KY1-1102
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="../js/jquery-3.7.1.min.js"></script>
+  <script src="../js/auth.js"></script>
+  <script>
+    $(document).ready(function () {
+      /* If already authenticated, skip login */
+      if (sessionStorage.getItem('gnl_auth') === 'true') {
+        window.location.href = 'dashboard.html';
+        return;
+      }
+
+      $('#loginForm').on('submit', function (e) {
+        e.preventDefault();
+        var username = $.trim($('#username').val());
+        var password = $('#password').val();
+
+        $('#loginBtn').prop('disabled', true).text('Autenticazione…');
+        $('#loginError').hide();
+
+        /* Simulate slight delay for realism */
+        setTimeout(function () {
+          if (window.attemptLogin(username, password)) {
+            $('#loginBtn').text('Accesso effettuato ✓');
+            setTimeout(function () {
+              window.location.href = 'dashboard.html';
+            }, 400);
+          } else {
+            $('#loginError').show();
+            $('#loginBtn').prop('disabled', false).text('Accedi al Portale');
+            $('#password').val('').focus();
+          }
+        }, 600);
+      });
+    });
+  </script>
+</body>
+</html>
+
+

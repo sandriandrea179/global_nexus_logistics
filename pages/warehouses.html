@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Area Depositi | GlobalNexus Logistics S.A.</title>
+      <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+<div class="app-container">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-logo">GNL</div>
+      <div class="brand-text">
+        <div class="brand-name">GlobalNexus</div>
+        <div class="brand-sub">Logistics S.A.</div>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <span class="nav-label">Dashboard</span>
+      <a class="nav-link" href="dashboard.html" data-page="dashboard"><span class="nav-icon">🏠</span> Home</a>
+      <span class="nav-label">Gestione</span>
+      <a class="nav-link" href="users.html" data-page="users"><span class="nav-icon">👥</span> Area Utenti</a>
+      <a class="nav-link" href="orders.html" data-page="orders"><span class="nav-icon">📦</span> Area Ordini</a>
+      <a class="nav-link" href="vehicles.html" data-page="vehicles"><span class="nav-icon">🚚</span> Area Mezzi</a>
+      <a class="nav-link" href="warehouses.html" data-page="warehouses"><span class="nav-icon">🏭</span> Area Depositi</a>
+      <a class="nav-link" href="containers.html" data-page="containers"><span class="nav-icon">🗃️</span> Area Container</a>
+      <span class="nav-label">Logistica</span>
+      <a class="nav-link" href="departures.html" data-page="departures"><span class="nav-icon">✈️</span> Area Partenze</a>
+      <a class="nav-link" href="destinations.html" data-page="destinations"><span class="nav-icon">📍</span> Area Destinazioni</a>
+    </nav>
+    <div class="sidebar-footer">
+      <button class="logout-btn" id="logoutBtn"><span>⏻</span> Disconnetti</button>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <header class="top-header">
+      <div class="header-left">
+        <button class="sidebar-toggle" id="sidebarToggle">☰</button>
+        <h1 class="page-title">Area Depositi</h1>
+      </div>
+      <div class="header-right">
+        <div class="status-indicator"><div class="status-dot"></div><span>Sistemi operativi</span></div>
+        <div class="user-badge">
+          <div class="user-avatar" id="currentUserInitial">A</div>
+          <span class="user-name" id="currentUser">admin</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="content-body">
+      <div class="stats-grid">
+        <div class="stat-card"><div class="stat-label">Depositi Totali</div><div class="stat-value gold" id="statTotal">—</div><div class="stat-desc">Hub nel mondo</div></div>
+        <div class="stat-card"><div class="stat-label">Depositi Attivi</div><div class="stat-value success" id="statActive">—</div><div class="stat-desc">Operativi</div></div>
+        <div class="stat-card"><div class="stat-label">Capacità Totale</div><div class="stat-value info" id="statCap">—</div><div class="stat-desc">Pallet complessivi</div></div>
+        <div class="stat-card"><div class="stat-label">Utilizzo Medio</div><div class="stat-value warning" id="statUtil">—</div><div class="stat-desc">% capacità usata</div></div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Rete Depositi Globale</div>
+            <div class="card-subtitle">Hub, magazzini e centri di distribuzione</div>
+          </div>
+        </div>
+        <div class="table-toolbar">
+          <div class="search-wrap">
+            <span class="search-icon">🔍</span>
+            <input class="search-input" type="text" id="tableSearch" placeholder="Cerca deposito, città…">
+          </div>
+          <div class="record-count" id="recordCount">Caricamento…</div>
+        </div>
+        <div id="tableContainer"></div>
+      </div>
+    </div>
+  </main>
+
+</div>
+
+<script src="../js/jquery-3.7.1.min.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/nav.js"></script>
+<script src="../js/data.js"></script>
+<script src="../js/tables.js"></script>
+<script>
+  $(document).ready(function () {
+    requireAuth();
+    setActiveNav('warehouses');
+    initHeader();
+
+    var columns = [
+      { key: 'id',              label: 'ID' },
+      { key: 'nome',            label: 'Nome Deposito' },
+      { key: 'indirizzo',       label: 'Indirizzo' },
+      { key: 'citta',           label: 'Città' },
+      { key: 'cap',             label: 'CAP' },
+      { key: 'stato',           label: 'Stato/Regione' },
+      { key: 'nazione',         label: 'Nazione' },
+      { key: 'responsabile',    label: 'Responsabile' },
+      { key: 'capacita_pallet', label: 'Capacità', render: function(v){ return (v||0).toLocaleString('it-IT') + ' pallet'; } },
+      { key: 'utilizzo_pct',    label: 'Utilizzo', render: function(v){ return progressBar(v); } },
+      { key: 'certificazioni',  label: 'Certificazioni', render: function(v){ return '<span style="font-size:11px;color:var(--text-muted)">'+escapeHtml(v)+'</span>'; } },
+      { key: 'attivo',          label: 'Stato', render: function(v){ return boolBadge(v, 'Attivo', 'Inattivo'); } }
+    ];
+
+    loadTable('../data/warehouses.json', '#tableContainer', columns, function (data) {
+      var active  = data.filter(function(w){ return w.attivo; }).length;
+      var cap     = data.reduce(function(s,w){ return s+(w.capacita_pallet||0); }, 0);
+      var avgUtil = Math.round(data.reduce(function(s,w){ return s+(w.utilizzo_pct||0); },0) / data.length);
+      $('#statTotal').text(data.length);
+      $('#statActive').text(active);
+      $('#statCap').text((cap/1000).toFixed(0) + 'K');
+      $('#statUtil').text(avgUtil + '%');
+    });
+  });
+</script>
+</body>
+</html>
+
+
+

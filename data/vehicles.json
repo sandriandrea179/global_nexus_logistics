@@ -1,0 +1,122 @@
+[
+  {
+    "id": "GNL-TR-001",
+    "tipo": "Camion",
+    "modello": "Scania R450",
+    "targa": "IT-GNL-0921",
+    "capacita_ton": 24,
+    "conducente": "Alessio Martini",
+    "stato": "In servizio",
+    "rotta_attuale": "Milano — Monaco di Baviera"
+  },
+  {
+    "id": "GNL-TR-002",
+    "tipo": "Camion",
+    "modello": "Mercedes-Benz Actros 1853",
+    "targa": "ES-GNL-1133",
+    "capacita_ton": 25,
+    "conducente": "Carlos Ruiz",
+    "stato": "In manutenzione",
+    "rotta_attuale": "Deposito Madrid"
+  },
+  {
+    "id": "GNL-TR-003",
+    "tipo": "Camion",
+    "modello": "Volvo FH540",
+    "targa": "DE-GNL-2244",
+    "capacita_ton": 26,
+    "conducente": "Klaus Hoffmann",
+    "stato": "In servizio",
+    "rotta_attuale": "Francoforte — Varsavia"
+  },
+  {
+    "id": "GNL-TR-004",
+    "tipo": "Camion",
+    "modello": "DAF XF530",
+    "targa": "FR-GNL-3311",
+    "capacita_ton": 24,
+    "conducente": "Jean-Pierre Moreau",
+    "stato": "In servizio",
+    "rotta_attuale": "Parigi — Barcellona"
+  },
+  {
+    "id": "GNL-TR-005",
+    "tipo": "Camion",
+    "modello": "MAN TGX 26.500",
+    "targa": "PL-GNL-4422",
+    "capacita_ton": 24,
+    "conducente": "Piotr Kowalski",
+    "stato": "Fermo",
+    "rotta_attuale": "Deposito Danzica"
+  },
+  {
+    "id": "GNL-TR-006",
+    "tipo": "Camion",
+    "modello": "Iveco S-Way 570",
+    "targa": "NL-GNL-5533",
+    "capacita_ton": 25,
+    "conducente": "Jan van der Berg",
+    "stato": "In servizio",
+    "rotta_attuale": "Rotterdam — Anversa"
+  },
+  {
+    "id": "GNL-SH-001",
+    "tipo": "Nave portacontainer",
+    "modello": "MV Nexus Atlantic",
+    "targa": "IMO 9812345",
+    "capacita_ton": 55000,
+    "conducente": "Capitano Erik Svensson",
+    "stato": "In navigazione",
+    "rotta_attuale": "Shanghai — Rotterdam"
+  },
+  {
+    "id": "GNL-SH-002",
+    "tipo": "Nave portacontainer",
+    "modello": "MV Pacific Gateway",
+    "targa": "IMO 9734211",
+    "capacita_ton": 72000,
+    "conducente": "Capitano Hiroshi Nakamura",
+    "stato": "In porto",
+    "rotta_attuale": "Porto di Singapore"
+  },
+  {
+    "id": "GNL-SH-003",
+    "tipo": "Nave cargo",
+    "modello": "MV Indian Star",
+    "targa": "IMO 9621008",
+    "capacita_ton": 41000,
+    "conducente": "Capitano Ravi Menon",
+    "stato": "In navigazione",
+    "rotta_attuale": "Dubai — Mumbai"
+  },
+  {
+    "id": "GNL-SH-004",
+    "tipo": "Nave Ro-Ro",
+    "modello": "MV Gulf Express",
+    "targa": "IMO 9589443",
+    "capacita_ton": 28000,
+    "conducente": "Capitano Ahmed Khalil",
+    "stato": "In manutenzione",
+    "rotta_attuale": "Cantiere navale Dubai"
+  },
+  {
+    "id": "GNL-AV-001",
+    "tipo": "Aereo cargo",
+    "modello": "Boeing 747-8F",
+    "targa": "N-GNL-001",
+    "capacita_ton": 113,
+    "conducente": "Comandante Sarah Mitchell",
+    "stato": "In volo",
+    "rotta_attuale": "Chicago — Francoforte"
+  },
+  {
+    "id": "GNL-AV-002",
+    "tipo": "Aereo cargo",
+    "modello": "Airbus A330-200F",
+    "targa": "F-GNL-002",
+    "capacita_ton": 70,
+    "conducente": "Comandante Pierre Leblanc",
+    "stato": "In hangar",
+    "rotta_attuale": "Aeroporto CDG, Parigi"
+  }
+]

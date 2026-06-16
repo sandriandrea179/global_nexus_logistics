@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Area Container | GlobalNexus Logistics S.A.</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <style>
+    .manifest-toggle { font-size: 11px; color: var(--accent-gold); cursor: pointer; border: none; background: none; padding: 0; font-family: inherit; }
+    .manifest-toggle:hover { text-decoration: underline; }
+    .manifest-panel { display: none; margin-top: 6px; }
+    .manifest-panel ul { list-style: none; }
+    .manifest-panel li { font-size: 11.5px; color: var(--text-muted); padding: 2px 0; display: flex; gap: 6px; }
+    .manifest-panel li::before { content: "›"; color: var(--accent-gold); flex-shrink: 0; }
+    .manifest-panel .item-qty { color: var(--text-secondary); margin-left: auto; white-space: nowrap; }
+  </style>
+</head>
+<body>
+<div class="app-container">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-logo">GNL</div>
+      <div class="brand-text">
+        <div class="brand-name">GlobalNexus</div>
+        <div class="brand-sub">Logistics S.A.</div>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <span class="nav-label">Dashboard</span>
+      <a class="nav-link" href="dashboard.html" data-page="dashboard"><span class="nav-icon">🏠</span> Home</a>
+      <span class="nav-label">Gestione</span>
+      <a class="nav-link" href="users.html" data-page="users"><span class="nav-icon">👥</span> Area Utenti</a>
+      <a class="nav-link" href="orders.html" data-page="orders"><span class="nav-icon">📦</span> Area Ordini</a>
+      <a class="nav-link" href="vehicles.html" data-page="vehicles"><span class="nav-icon">🚚</span> Area Mezzi</a>
+      <a class="nav-link" href="warehouses.html" data-page="warehouses"><span class="nav-icon">🏭</span> Area Depositi</a>
+      <a class="nav-link" href="containers.html" data-page="containers"><span class="nav-icon">🗃️</span> Area Container</a>
+      <span class="nav-label">Logistica</span>
+      <a class="nav-link" href="departures.html" data-page="departures"><span class="nav-icon">✈️</span> Area Partenze</a>
+      <a class="nav-link" href="destinations.html" data-page="destinations"><span class="nav-icon">📍</span> Area Destinazioni</a>
+    </nav>
+    <div class="sidebar-footer">
+      <button class="logout-btn" id="logoutBtn"><span>⏻</span> Disconnetti</button>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <header class="top-header">
+      <div class="header-left">
+        <button class="sidebar-toggle" id="sidebarToggle">☰</button>
+        <h1 class="page-title">Area Container</h1>
+      </div>
+      <div class="header-right">
+        <div class="status-indicator"><div class="status-dot"></div><span>Sistemi operativi</span></div>
+        <div class="user-badge">
+          <div class="user-avatar" id="currentUserInitial">A</div>
+          <span class="user-name" id="currentUser">admin</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="content-body">
+      <div class="stats-grid">
+        <div class="stat-card"><div class="stat-label">Container Totali</div><div class="stat-value gold" id="statTotal">—</div></div>
+        <div class="stat-card"><div class="stat-label">In Viaggio</div><div class="stat-value info" id="statTransit">—</div></div>
+        <div class="stat-card"><div class="stat-label">In Deposito</div><div class="stat-value warning" id="statDepot">—</div></div>
+        <div class="stat-card"><div class="stat-label">Consegnati</div><div class="stat-value success" id="statDone">—</div></div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Registro Container</div>
+            <div class="card-subtitle">Clicca su "Contenuto" per espandere il manifesto del container</div>
+          </div>
+        </div>
+        <div class="table-toolbar">
+          <div class="search-wrap">
+            <span class="search-icon">🔍</span>
+            <input class="search-input" type="text" id="tableSearch" placeholder="Cerca container, sigla…">
+          </div>
+          <div class="record-count" id="recordCount">Caricamento…</div>
+        </div>
+        <div id="tableContainer"></div>
+      </div>
+    </div>
+  </main>
+
+</div>
+
+<script src="../js/jquery-3.7.1.min.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/nav.js"></script>
+<script src="../js/data.js"></script>
+<script src="../js/tables.js"></script>
+<script>
+  $(document).ready(function () {
+    requireAuth();
+    setActiveNav('containers');
+    initHeader();
+
+    function renderManifest(contenuto, row) {
+      if (!contenuto || contenuto.length === 0) return '—';
+      var uid = 'manifest-' + row.id.replace(/[^a-z0-9]/gi, '-');
+      var items = '';
+      $.each(contenuto, function (_, item) {
+        items += '<li>' + escapeHtml(item.descrizione) + '<span class="item-qty">' + escapeHtml(item.quantita) + ' · ' + (item.peso_kg||0).toLocaleString('it-IT') + ' kg</span></li>';
+      });
+      return '<button class="manifest-toggle" onclick="$(\'#' + uid + '\').toggle()">▾ Contenuto (' + contenuto.length + ' voci)</button>' +
+             '<div class="manifest-panel" id="' + uid + '"><ul>' + items + '</ul></div>';
+    }
+
+    var columns = [
+      { key: 'id',            label: 'ID Container' },
+      { key: 'sigla',         label: 'Sigla ISO' },
+      { key: 'tipo',          label: 'Tipo' },
+      { key: 'posizione',     label: 'Posizione Attuale' },
+      { key: 'temperatura',   label: 'Temperatura', render: function(v){ return v && v !== 'Ambiente' ? '<span class="badge badge-info">'+v+'</span>' : '<span style="color:var(--text-muted)">Ambiente</span>'; } },
+      { key: 'peso_lordo_kg', label: 'Peso Lordo', render: function(v){ return (v||0).toLocaleString('it-IT') + ' kg'; } },
+      { key: 'sigillato',     label: 'Sigillato', render: function(v){ return boolBadge(v, '🔒 Sì', '🔓 No'); } },
+      { key: 'contenuto',     label: 'Manifesto', render: renderManifest },
+      { key: 'stato',         label: 'Stato', render: function(v){ return statusBadge(v); } }
+    ];
+
+    loadTable('../data/containers.json', '#tableContainer', columns, function (data) {
+      var transit = data.filter(function(c){ return c.stato === 'In viaggio'; }).length;
+      var depot   = data.filter(function(c){ return c.stato === 'In deposito'; }).length;
+      var done    = data.filter(function(c){ return c.stato === 'Consegnato'; }).length;
+      $('#statTotal').text(data.length);
+      $('#statTransit').text(transit);
+      $('#statDepot').text(depot);
+      $('#statDone').text(done);
+    });
+  });
+</script>
+</body>
+</html>

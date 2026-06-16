@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Area Destinazioni | GlobalNexus Logistics S.A.</title>
+      <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+<div class="app-container">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-logo">GNL</div>
+      <div class="brand-text">
+        <div class="brand-name">GlobalNexus</div>
+        <div class="brand-sub">Logistics S.A.</div>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <span class="nav-label">Dashboard</span>
+      <a class="nav-link" href="dashboard.html" data-page="dashboard"><span class="nav-icon">🏠</span> Home</a>
+      <span class="nav-label">Gestione</span>
+      <a class="nav-link" href="users.html" data-page="users"><span class="nav-icon">👥</span> Area Utenti</a>
+      <a class="nav-link" href="orders.html" data-page="orders"><span class="nav-icon">📦</span> Area Ordini</a>
+      <a class="nav-link" href="vehicles.html" data-page="vehicles"><span class="nav-icon">🚚</span> Area Mezzi</a>
+      <a class="nav-link" href="warehouses.html" data-page="warehouses"><span class="nav-icon">🏭</span> Area Depositi</a>
+      <a class="nav-link" href="containers.html" data-page="containers"><span class="nav-icon">🗃️</span> Area Container</a>
+      <span class="nav-label">Logistica</span>
+      <a class="nav-link" href="departures.html" data-page="departures"><span class="nav-icon">✈️</span> Area Partenze</a>
+      <a class="nav-link" href="destinations.html" data-page="destinations"><span class="nav-icon">📍</span> Area Destinazioni</a>
+    </nav>
+    <div class="sidebar-footer">
+      <button class="logout-btn" id="logoutBtn"><span>⏻</span> Disconnetti</button>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <header class="top-header">
+      <div class="header-left">
+        <button class="sidebar-toggle" id="sidebarToggle">☰</button>
+        <h1 class="page-title">Area Destinazioni</h1>
+      </div>
+      <div class="header-right">
+        <div class="status-indicator"><div class="status-dot"></div><span>Sistemi operativi</span></div>
+        <div class="user-badge">
+          <div class="user-avatar" id="currentUserInitial">A</div>
+          <span class="user-name" id="currentUser">admin</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="content-body">
+      <div class="stats-grid">
+        <div class="stat-card"><div class="stat-label">Destinazioni Totali</div><div class="stat-value gold" id="statTotal">—</div></div>
+        <div class="stat-card"><div class="stat-label">Arrivati</div><div class="stat-value success" id="statArr">—</div></div>
+        <div class="stat-card"><div class="stat-label">In Avvicinamento</div><div class="stat-value info" id="statAppr">—</div></div>
+        <div class="stat-card"><div class="stat-label">Programmati</div><div class="stat-value warning" id="statSched">—</div></div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Registro Destinazioni</div>
+            <div class="card-subtitle">Arrivi previsti con indirizzo completo e ETA aggiornato</div>
+          </div>
+        </div>
+        <div class="table-toolbar">
+          <div class="search-wrap">
+            <span class="search-icon">🔍</span>
+            <input class="search-input" type="text" id="tableSearch" placeholder="Cerca mezzo, città, nazione…">
+          </div>
+          <div class="record-count" id="recordCount">Caricamento…</div>
+        </div>
+        <div id="tableContainer"></div>
+      </div>
+    </div>
+  </main>
+
+</div>
+
+<script src="../js/jquery-3.7.1.min.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/nav.js"></script>
+<script src="../js/data.js"></script>
+<script src="../js/tables.js"></script>
+<script>
+  $(document).ready(function () {
+    requireAuth();
+    setActiveNav('destinations');
+    initHeader();
+
+    var columns = [
+      { key: 'id',                    label: 'ID' },
+      { key: 'mezzo_nome',            label: 'Mezzo' },
+      { key: 'tipo_mezzo',            label: 'Tipo Mezzo' },
+      { key: 'indirizzo',             label: 'Indirizzo Destinazione' },
+      { key: 'citta',                 label: 'Città' },
+      { key: 'cap',                   label: 'CAP' },
+      { key: 'stato',                 label: 'Stato/Regione' },
+      { key: 'nazione',               label: 'Nazione' },
+      { key: 'data_arrivo_prevista',  label: 'Arrivo Previsto' },
+      { key: 'ora_arrivo_prevista',   label: 'Ora ETA' },
+      { key: 'eta_aggiornata',        label: 'ETA Aggiornata' },
+      { key: 'stato_arrivo',          label: 'Stato', render: function(v){ return statusBadge(v); } }
+    ];
+
+    loadTable('../data/destinations.json', '#tableContainer', columns, function (data) {
+      var arr   = data.filter(function(d){ return d.stato_arrivo === 'Arrivato'; }).length;
+      var appr  = data.filter(function(d){ return d.stato_arrivo === 'In avvicinamento'; }).length;
+      var sched = data.filter(function(d){ return d.stato_arrivo === 'Programmato'; }).length;
+      $('#statTotal').text(data.length);
+      $('#statArr').text(arr);
+      $('#statAppr').text(appr);
+      $('#statSched').text(sched);
+    });
+  });
+</script>
+</body>
+</html>
+
+
+

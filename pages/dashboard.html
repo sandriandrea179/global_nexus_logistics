@@ -1,0 +1,390 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | GlobalNexus Logistics S.A.</title>
+  <meta name="description" content="Portale operativo interno GlobalNexus Logistics S.A.">
+      <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+<div class="app-container">
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-logo">GNL</div>
+      <div class="brand-text">
+        <div class="brand-name">GlobalNexus</div>
+        <div class="brand-sub">Logistics S.A.</div>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <span class="nav-label">Dashboard</span>
+      <a class="nav-link" href="dashboard.html" data-page="dashboard">
+        <span class="nav-icon">🏠</span> Home
+      </a>
+      <span class="nav-label">Gestione</span>
+      <a class="nav-link" href="users.html" data-page="users">
+        <span class="nav-icon">👥</span> Area Utenti
+      </a>
+      <a class="nav-link" href="orders.html" data-page="orders">
+        <span class="nav-icon">📦</span> Area Ordini
+      </a>
+      <a class="nav-link" href="vehicles.html" data-page="vehicles">
+        <span class="nav-icon">🚚</span> Area Mezzi
+      </a>
+      <a class="nav-link" href="warehouses.html" data-page="warehouses">
+        <span class="nav-icon">🏭</span> Area Depositi
+      </a>
+      <a class="nav-link" href="containers.html" data-page="containers">
+        <span class="nav-icon">🗃️</span> Area Container
+      </a>
+      <span class="nav-label">Logistica</span>
+      <a class="nav-link" href="departures.html" data-page="departures">
+        <span class="nav-icon">✈️</span> Area Partenze
+      </a>
+      <a class="nav-link" href="destinations.html" data-page="destinations">
+        <span class="nav-icon">📍</span> Area Destinazioni
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <button class="logout-btn" id="logoutBtn">
+        <span>⏻</span> Disconnetti
+      </button>
+    </div>
+  </aside>
+
+  <!-- ===== MAIN ===== -->
+  <main class="main-content">
+    <header class="top-header">
+      <div class="header-left">
+        <button class="sidebar-toggle" id="sidebarToggle">☰</button>
+        <h1 class="page-title">Dashboard</h1>
+      </div>
+      <div class="header-right">
+        <div class="status-indicator">
+          <div class="status-dot"></div>
+          <span>Sistemi operativi</span>
+        </div>
+        <div class="user-badge">
+          <div class="user-avatar" id="currentUserInitial">A</div>
+          <span class="user-name" id="currentUser">admin</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="content-body">
+
+      <!-- HERO -->
+      <div class="dashboard-hero">
+        <div class="hero-eyebrow">
+          <div class="hero-eyebrow-dot"></div>
+          Portale Operativo Interno
+        </div>
+        <h2 class="hero-title">Benvenuto in <span class="highlight">GlobalNexus</span><br>Logistics S.A.</h2>
+        <p class="hero-sub">
+          Gestione centralizzata delle operazioni logistiche globali. Monitora spedizioni, flotta, depositi e personale in tempo reale da un'unica piattaforma sicura.
+        </p>
+        <div class="hero-meta">
+          <div class="hero-meta-item"><strong>140+</strong> Paesi serviti</div>
+          <div class="hero-meta-item"><strong>8</strong> Hub operativi</div>
+          <div class="hero-meta-item"><strong>98.4%</strong> On-time delivery</div>
+          <div class="hero-meta-item"><strong>$2.1B</strong> Valore merci gestite</div>
+        </div>
+      </div>
+
+      <!-- SEZIONE 1: CHI SIAMO -->
+      <section class="dash-section" id="chi-siamo">
+        <div class="section-header">
+          <div class="section-eyebrow">01 — Chi Siamo</div>
+          <h2 class="section-title">La nostra identità</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="who-grid">
+          <div class="who-card">
+            <span class="who-icon">🌐</span>
+            <div class="who-title">Multinazionale Globale</div>
+            <div class="who-desc">Fondata nel 2002 alle Isole Cayman, GlobalNexus Logistics S.A. è oggi presente in oltre 140 nazioni con una rete di partner e hub strategici su tutti i continenti.</div>
+          </div>
+          <div class="who-card">
+            <span class="who-icon">🚢</span>
+            <div class="who-title">Flotta Multimodale</div>
+            <div class="who-desc">Operiamo via mare, aria e terra con una flotta integrata di navi portacontainer, aerei cargo Boeing e Airbus, e centinaia di automezzi pesanti in Europa e oltre.</div>
+          </div>
+          <div class="who-card">
+            <span class="who-icon">🔒</span>
+            <div class="who-title">Compliance & Sicurezza</div>
+            <div class="who-desc">Tutti i nostri processi sono certificati ISO 9001, C-TPAT e AEO. Rispettiamo le normative doganali di ogni paese in cui operiamo, garantendo trasparenza totale.</div>
+          </div>
+          <div class="who-card">
+            <span class="who-icon">🤝</span>
+            <div class="who-title">Persone al Centro</div>
+            <div class="who-desc">Oltre 3.200 dipendenti in 68 uffici nel mondo. Investiamo nella formazione continua e nella crescita professionale di ogni membro del team GlobalNexus.</div>
+          </div>
+        </div>
+
+        <!-- History timeline -->
+        <div style="margin-top: 30px;">
+          <div style="font-size:13px;font-weight:600;color:var(--text-primary);margin-bottom:16px;">La nostra storia</div>
+          <div class="history-line">
+            <div class="history-item">
+              <div class="history-year">2002</div>
+              <div class="history-text">Fondazione di GlobalNexus Logistics S.A. alle Isole Cayman con un capital sociale di $50M.</div>
+            </div>
+            <div class="history-item">
+              <div class="history-year">2007</div>
+              <div class="history-text">Apertura degli hub europei di Rotterdam e Francoforte. Lancio della divisione cargo aereo.</div>
+            </div>
+            <div class="history-item">
+              <div class="history-year">2012</div>
+              <div class="history-text">Espansione in Asia con gli hub di Singapore e Shanghai. Acquisizione di tre linee marittime regionali.</div>
+            </div>
+            <div class="history-item">
+              <div class="history-year">2018</div>
+              <div class="history-text">IPO sulla borsa di Londra. Fatturato supera $1 miliardo. Apertura hub Dubai e Chicago.</div>
+            </div>
+            <div class="history-item">
+              <div class="history-year">2024</div>
+              <div class="history-text">Lancio della piattaforma digitale integrata. $2.1B in merci gestite. 140+ paesi raggiunti.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEZIONE 2: OBIETTIVI -->
+      <section class="dash-section" id="obiettivi">
+        <div class="section-header">
+          <div class="section-eyebrow">02 — Obiettivi</div>
+          <h2 class="section-title">Missione, Vision & KPI</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="objectives-grid">
+          <div class="objective-card">
+            <div class="obj-num">1</div>
+            <div>
+              <div class="obj-title">Eccellenza Operativa</div>
+              <div class="obj-desc">Mantenere un tasso di consegna puntuale superiore al 98% su tutte le rotte globali, con tolleranza zero sui danni alle merci.</div>
+            </div>
+          </div>
+          <div class="objective-card">
+            <div class="obj-num">2</div>
+            <div>
+              <div class="obj-title">Espansione Geografica</div>
+              <div class="obj-desc">Aprire 5 nuovi hub operativi entro il 2026, con focus su Africa subsahariana e Sud-Est asiatico, mercati in forte crescita.</div>
+            </div>
+          </div>
+          <div class="objective-card">
+            <div class="obj-num">3</div>
+            <div>
+              <div class="obj-title">Sostenibilità Ambientale</div>
+              <div class="obj-desc">Ridurre le emissioni di CO₂ per tonnellata-km del 35% entro il 2030, attraverso flotta green e ottimizzazione dei percorsi.</div>
+            </div>
+          </div>
+          <div class="objective-card">
+            <div class="obj-num">4</div>
+            <div>
+              <div class="obj-title">Digitalizzazione Totale</div>
+              <div class="obj-desc">Automatizzare il 70% dei processi documentali entro il 2025 tramite AI e blockchain per la tracciabilità delle spedizioni.</div>
+            </div>
+          </div>
+          <div class="objective-card">
+            <div class="obj-num">5</div>
+            <div>
+              <div class="obj-title">Customer Satisfaction</div>
+              <div class="obj-desc">Raggiungere un NPS (Net Promoter Score) superiore a 70, attraverso tracciamento real-time e comunicazione proattiva.</div>
+            </div>
+          </div>
+          <div class="objective-card">
+            <div class="obj-num">6</div>
+            <div>
+              <div class="obj-title">Crescita Fatturato</div>
+              <div class="obj-desc">Target $3 miliardi entro 2026 con margine EBITDA stabile al 18%, mantenendo la solidità finanziaria del gruppo.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- KPI -->
+        <div class="kpi-section">
+          <div style="font-size:13px;font-weight:600;color:var(--text-primary);margin-bottom:4px;">KPI 2024 — Aggiornamento Q1</div>
+          <div class="kpi-grid">
+            <div class="kpi-card">
+              <div class="kpi-name">On-Time Delivery</div>
+              <div class="kpi-value gold">98.4%</div>
+              <div class="kpi-bar"><div class="kpi-fill" style="width:98.4%"></div></div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-name">Utilizzo Flotta</div>
+              <div class="kpi-value gold">87%</div>
+              <div class="kpi-bar"><div class="kpi-fill" style="width:87%"></div></div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-name">Incidenti (YTD)</div>
+              <div class="kpi-value gold">0.3%</div>
+              <div class="kpi-bar"><div class="kpi-fill" style="width:3%"></div></div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-name">NPS Score</div>
+              <div class="kpi-value gold">68</div>
+              <div class="kpi-bar"><div class="kpi-fill" style="width:68%"></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEZIONE 3: DOVE OPERIAMO -->
+      <section class="dash-section" id="dove-operiamo">
+        <div class="section-header">
+          <div class="section-eyebrow">03 — Dove Operiamo</div>
+          <h2 class="section-title">Copertura Globale</h2>
+          <div class="section-divider"></div>
+        </div>
+        <p style="font-size:13.5px;color:var(--text-secondary);line-height:1.8;margin-bottom:20px;max-width:680px;">
+          GlobalNexus Logistics opera su tutti e cinque i continenti con hub strategici, agenti locali certificati e accordi doganali preferenziali in oltre 140 giurisdizioni.
+        </p>
+        <div class="regions-grid">
+          <div class="region-card">
+            <div class="region-header">
+              <span class="region-flag">🇪🇺</span>
+              <span class="region-name">Europa</span>
+            </div>
+            <div class="region-countries">Italia, Germania, Paesi Bassi, Francia, Spagna, Polonia, Belgio, Svizzera, Austria, UK, Svezia, Norvegia, Portogallo, Romania</div>
+            <div class="region-offices"><strong>4 Hub</strong> principali · Milano, Rotterdam, Francoforte, Madrid</div>
+          </div>
+          <div class="region-card">
+            <div class="region-header">
+              <span class="region-flag">🌏</span>
+              <span class="region-name">Asia & Pacifico</span>
+            </div>
+            <div class="region-countries">Cina, Giappone, India, Singapore, Corea del Sud, Vietnam, Tailandia, Malesia, Indonesia, Australia, N. Zelanda</div>
+            <div class="region-offices"><strong>2 Hub</strong> principali · Singapore, Shanghai</div>
+          </div>
+          <div class="region-card">
+            <div class="region-header">
+              <span class="region-flag">🌍</span>
+              <span class="region-name">Medio Oriente & Africa</span>
+            </div>
+            <div class="region-countries">UAE, Arabia Saudita, Qatar, Kuwait, Nigeria, Kenya, Sudafrica, Egitto, Marocco, Ghana, Tanzania</div>
+            <div class="region-offices"><strong>2 Hub</strong> principali · Dubai, Nairobi</div>
+          </div>
+          <div class="region-card">
+            <div class="region-header">
+              <span class="region-flag">🌎</span>
+              <span class="region-name">Americhe</span>
+            </div>
+            <div class="region-countries">USA, Canada, Messico, Brasile, Argentina, Cile, Colombia, Perù, Panama</div>
+            <div class="region-offices"><strong>1 Hub</strong> principale · Chicago</div>
+          </div>
+          <div class="region-card">
+            <div class="region-header">
+              <span class="region-flag">⚓</span>
+              <span class="region-name">Sede Legale</span>
+            </div>
+            <div class="region-countries">94 Solaris Avenue, George Town, Grand Cayman KY1-1102, Isole Cayman</div>
+            <div class="region-offices"><strong>HQ Amministrativo</strong> · Isole Cayman</div>
+          </div>
+          <div class="region-card">
+            <div class="region-header">
+              <span class="region-flag">🛤️</span>
+              <span class="region-name">Rotte Marittime</span>
+            </div>
+            <div class="region-countries">Trans-Pacific · Asia–Europa (Suez) · Trans-Atlantico · India Ocean Loop · Gulf Express</div>
+            <div class="region-offices"><strong>5 Rotte</strong> principali coperte stabilmente</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEZIONE 4: CONTATTI -->
+      <section class="dash-section" id="contatti">
+        <div class="section-header">
+          <div class="section-eyebrow">04 — Contatti</div>
+          <h2 class="section-title">Uffici & Riferimenti</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="contacts-grid">
+          <div class="contact-card hq-card">
+            <div class="contact-badge">Sede Legale — HQ</div>
+            <div class="contact-name">GlobalNexus Logistics S.A.</div>
+            <div class="contact-role">Headquarters</div>
+            <ul class="contact-info-list">
+              <li><span class="ci">📍</span> 94 Solaris Ave, George Town, Grand Cayman KY1-1102</li>
+              <li><span class="ci">📞</span> +1 345 946 4800</li>
+              <li><span class="ci">✉️</span> <a href="#">hq@globalnexus.com</a></li>
+            </ul>
+          </div>
+          <div class="contact-card">
+            <div class="contact-badge">Hub Europa — Milano</div>
+            <div class="contact-name">Marco Pellegrini</div>
+            <div class="contact-role">Operations Manager, Europa</div>
+            <ul class="contact-info-list">
+              <li><span class="ci">📍</span> Via dell'Industria 45, 20142 Milano, Italia</li>
+              <li><span class="ci">📞</span> +39 02 8734 5600</li>
+              <li><span class="ci">✉️</span> <a href="#">m.pellegrini@globalnexus.com</a></li>
+            </ul>
+          </div>
+          <div class="contact-card">
+            <div class="contact-badge">Hub Asia — Singapore</div>
+            <div class="contact-name">Yuki Tanaka</div>
+            <div class="contact-role">Regional Director APAC</div>
+            <ul class="contact-info-list">
+              <li><span class="ci">📍</span> 10 Pioneer Crescent, Singapore 628557</li>
+              <li><span class="ci">📞</span> +65 6734 8800</li>
+              <li><span class="ci">✉️</span> <a href="#">y.tanaka@globalnexus.com</a></li>
+            </ul>
+          </div>
+          <div class="contact-card">
+            <div class="contact-badge">Hub MEA — Dubai</div>
+            <div class="contact-name">Ahmed Al-Rashid</div>
+            <div class="contact-role">Customs & MEA Specialist</div>
+            <ul class="contact-info-list">
+              <li><span class="ci">📍</span> Al Quoz Industrial Area 4, Dubai, UAE</li>
+              <li><span class="ci">📞</span> +971 4 8834 5500</li>
+              <li><span class="ci">✉️</span> <a href="#">a.alrashid@globalnexus.com</a></li>
+            </ul>
+          </div>
+          <div class="contact-card">
+            <div class="contact-badge">Hub Americas — Chicago</div>
+            <div class="contact-name">Robert Hayes</div>
+            <div class="contact-role">Americas Distribution Director</div>
+            <ul class="contact-info-list">
+              <li><span class="ci">📍</span> 4500 W 51st Street, Chicago, IL 60632, USA</li>
+              <li><span class="ci">📞</span> +1 312 734 6600</li>
+              <li><span class="ci">✉️</span> <a href="#">r.hayes@globalnexus.com</a></li>
+            </ul>
+          </div>
+          <div class="contact-card">
+            <div class="contact-badge">Supporto Generale</div>
+            <div class="contact-name">Customer Operations Center</div>
+            <div class="contact-role">Attivo 24/7 — 365 giorni</div>
+            <ul class="contact-info-list">
+              <li><span class="ci">📞</span> +1 800 GNL-2024 (linea gratuita)</li>
+              <li><span class="ci">✉️</span> <a href="#">operations@globalnexus.com</a></li>
+              <li><span class="ci">🌐</span> <a href="#">www.globalnexus.com</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /content-body -->
+  </main>
+
+</div><!-- /app-container -->
+
+<script src="../js/jquery-3.7.1.min.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/nav.js"></script>
+<script>
+  $(document).ready(function () {
+    requireAuth();
+    setActiveNav('dashboard');
+    initHeader();
+  });
+</script>
+</body>
+</html>
+
+
