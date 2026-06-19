@@ -12,7 +12,7 @@
     "contenuto": [
       { "descrizione": "Componenti elettronici Samsung", "quantita": "320 casse", "peso_kg": 4800 },
       { "descrizione": "Cavi industriali in rame", "quantita": "85 rotoli", "peso_kg": 6200 },
-      { "descrizione": "Schede madri industriali", "quantita": "140 unità", "peso_kg": 1250 }
+      { "descrizione": "Ricevitori telefonici", "quantita": "140 unità", "peso_kg": 1250 }
     ]
   },
   {
@@ -43,7 +43,7 @@
     "sigillato": true,
     "contenuto": [
       { "descrizione": "Carne bovina congelata (AUS)", "quantita": "480 casse da 20kg", "peso_kg": 9600 },
-      { "descrizione": "Frutti di mare surgelati", "quantita": "320 casse da 10kg", "peso_kg": 3200 },
+      { "descrizione": "Batterie", "quantita": "320 casse da 10kg", "peso_kg": 3200 },
       { "descrizione": "Burro industriale (NZ)", "quantita": "250 blocchi da 25kg", "peso_kg": 6250 }
     ]
   },
@@ -91,7 +91,7 @@
     "sigillato": false,
     "contenuto": [
       { "descrizione": "Macchinari agricoli (pezzi)", "quantita": "6 unità parziali", "peso_kg": 12000 },
-      { "descrizione": "Attrezzatura per perforazione", "quantita": "4 set", "peso_kg": 5500 }
+      { "descrizione": "Detonatori", "quantita": "4 set", "peso_kg": 5500 }
     ]
   },
   {
