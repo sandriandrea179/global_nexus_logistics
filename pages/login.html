@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
@@ -60,7 +60,7 @@
           ⚠ Credenziali non valide. Riprovare.
         </div>
 
-        <form id="loginForm" novalidate>
+        <form id="loginForm" novalidate autocomplete="off">
           <div class="form-group">
             <label class="form-label" for="username">Nome Utente</label>
             <div class="input-wrap">
@@ -71,7 +71,7 @@
                 id="username"
                 name="username"
                 placeholder="username aziendale"
-                autocomplete="username"
+                autocomplete="off"
                 required
               >
             </div>
@@ -87,7 +87,7 @@
                 id="password"
                 name="password"
                 placeholder="••••••••••"
-                autocomplete="current-password"
+                autocomplete="new-password"
                 required
               >
             </div>

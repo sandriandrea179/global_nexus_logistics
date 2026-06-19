@@ -10,9 +10,21 @@
     "tara_kg": 2200,
     "sigillato": true,
     "contenuto": [
-      { "descrizione": "Componenti elettronici Samsung", "quantita": "320 casse", "peso_kg": 4800 },
-      { "descrizione": "Cavi industriali in rame", "quantita": "85 rotoli", "peso_kg": 6200 },
-      { "descrizione": "Ricevitori telefonici", "quantita": "140 unità", "peso_kg": 1250 }
+      {
+        "descrizione": "Componenti elettronici Samsung",
+        "quantita": "320 casse",
+        "peso_kg": 4800
+      },
+      {
+        "descrizione": "Cavi industriali in rame",
+        "quantita": "85 rotoli",
+        "peso_kg": 6200
+      },
+      {
+        "descrizione": "Schede madri",
+        "quantita": "140 unità",
+        "peso_kg": 1250
+      }
     ]
   },
   {
@@ -26,9 +38,21 @@
     "tara_kg": 3750,
     "sigillato": true,
     "contenuto": [
-      { "descrizione": "Ricambi automotive Bosch", "quantita": "540 casse", "peso_kg": 12300 },
-      { "descrizione": "Pneumatici Continental", "quantita": "200 unità", "peso_kg": 4800 },
-      { "descrizione": "Olii lubrificanti industriali (fusti)", "quantita": "60 fusti da 200L", "peso_kg": 6950 }
+      {
+        "descrizione": "Ricambi automotive Bosch",
+        "quantita": "540 casse",
+        "peso_kg": 12300
+      },
+      {
+        "descrizione": "Pneumatici Continental",
+        "quantita": "200 unità",
+        "peso_kg": 4800
+      },
+      {
+        "descrizione": "Olii lubrificanti industriali (fusti)",
+        "quantita": "60 fusti da 200L",
+        "peso_kg": 6950
+      }
     ]
   },
   {
@@ -42,9 +66,21 @@
     "tara_kg": 4200,
     "sigillato": true,
     "contenuto": [
-      { "descrizione": "Carne bovina congelata (AUS)", "quantita": "480 casse da 20kg", "peso_kg": 9600 },
-      { "descrizione": "Batterie", "quantita": "320 casse da 10kg", "peso_kg": 3200 },
-      { "descrizione": "Burro industriale (NZ)", "quantita": "250 blocchi da 25kg", "peso_kg": 6250 }
+      {
+        "descrizione": "Carne bovina congelata (AUS)",
+        "quantita": "480 casse da 20kg",
+        "peso_kg": 9600
+      },
+      {
+        "descrizione": "Batterie",
+        "quantita": "320 casse da 10kg",
+        "peso_kg": 3200
+      },
+      {
+        "descrizione": "Burro industriale (NZ)",
+        "quantita": "250 blocchi da 25kg",
+        "peso_kg": 6250
+      }
     ]
   },
   {
@@ -58,9 +94,21 @@
     "tara_kg": 2200,
     "sigillato": false,
     "contenuto": [
-      { "descrizione": "Tessuti in fibra sintetica (balle)", "quantita": "180 balle", "peso_kg": 7200 },
-      { "descrizione": "Accessori moda (scatole)", "quantita": "900 scatole", "peso_kg": 4500 },
-      { "descrizione": "Pelletteria semilavorata", "quantita": "240 pezzi", "peso_kg": 2000 }
+      {
+        "descrizione": "Tessuti in fibra sintetica (balle)",
+        "quantita": "180 balle",
+        "peso_kg": 7200
+      },
+      {
+        "descrizione": "Accessori moda (scatole)",
+        "quantita": "900 scatole",
+        "peso_kg": 4500
+      },
+      {
+        "descrizione": "Pelletteria semilavorata",
+        "quantita": "240 pezzi",
+        "peso_kg": 2000
+      }
     ]
   },
   {
@@ -74,9 +122,21 @@
     "tara_kg": 3600,
     "sigillato": true,
     "contenuto": [
-      { "descrizione": "Generatori elettrici industriali", "quantita": "12 unità", "peso_kg": 14400 },
-      { "descrizione": "Pannelli solari fotovoltaici", "quantita": "300 pannelli", "peso_kg": 5400 },
-      { "descrizione": "Cablaggio elettrico", "quantita": "40 bobine", "peso_kg": 2400 }
+      {
+        "descrizione": "Generatori elettrici industriali",
+        "quantita": "12 unità",
+        "peso_kg": 14400
+      },
+      {
+        "descrizione": "Pannelli solari fotovoltaici",
+        "quantita": "300 pannelli",
+        "peso_kg": 5400
+      },
+      {
+        "descrizione": "Cablaggio elettrico",
+        "quantita": "40 bobine",
+        "peso_kg": 2400
+      }
     ]
   },
   {
@@ -90,8 +150,16 @@
     "tara_kg": 2300,
     "sigillato": false,
     "contenuto": [
-      { "descrizione": "Macchinari agricoli (pezzi)", "quantita": "6 unità parziali", "peso_kg": 12000 },
-      { "descrizione": "Detonatori", "quantita": "4 set", "peso_kg": 5500 }
+      {
+        "descrizione": "Macchinari agricoli (pezzi)",
+        "quantita": "6 unità parziali",
+        "peso_kg": 12000
+      },
+      {
+        "descrizione": "Detonatori",
+        "quantita": "4 set",
+        "peso_kg": 5500
+      }
     ]
   },
   {
@@ -105,9 +173,21 @@
     "tara_kg": 3750,
     "sigillato": true,
     "contenuto": [
-      { "descrizione": "Prodotti cosmetici L'Oréal", "quantita": "1200 cartoni", "peso_kg": 6000 },
-      { "descrizione": "Articoli per la casa", "quantita": "800 cartoni", "peso_kg": 5600 },
-      { "descrizione": "Giocattoli vari (assortiti)", "quantita": "400 casse", "peso_kg": 2750 }
+      {
+        "descrizione": "Prodotti cosmetici L'Oréal",
+        "quantita": "1200 cartoni",
+        "peso_kg": 6000
+      },
+      {
+        "descrizione": "Articoli per la casa",
+        "quantita": "800 cartoni",
+        "peso_kg": 5600
+      },
+      {
+        "descrizione": "Giocattoli vari (assortiti)",
+        "quantita": "400 casse",
+        "peso_kg": 2750
+      }
     ]
   },
   {
@@ -121,9 +201,21 @@
     "tara_kg": 3100,
     "sigillato": true,
     "contenuto": [
-      { "descrizione": "Prodotti farmaceutici (fiale)", "quantita": "2400 confezioni", "peso_kg": 3600 },
-      { "descrizione": "Vaccini refrigerati", "quantita": "480 kit", "peso_kg": 960 },
-      { "descrizione": "Reagenti di laboratorio", "quantita": "200 flaconi", "peso_kg": 400 }
+      {
+        "descrizione": "Prodotti farmaceutici (fiale)",
+        "quantita": "2400 confezioni",
+        "peso_kg": 3600
+      },
+      {
+        "descrizione": "Ricevitori telfonici",
+        "quantita": "480 kit",
+        "peso_kg": 960
+      },
+      {
+        "descrizione": "Reagenti di laboratorio",
+        "quantita": "200 flaconi",
+        "peso_kg": 400
+      }
     ]
   },
   {
@@ -137,8 +229,16 @@
     "tara_kg": 2200,
     "sigillato": false,
     "contenuto": [
-      { "descrizione": "Materie prime chimiche (bombole)", "quantita": "80 bombole", "peso_kg": 9600 },
-      { "descrizione": "Additivi alimentari", "quantita": "120 fusti", "peso_kg": 3600 }
+      {
+        "descrizione": "Materie prime chimiche (bombole)",
+        "quantita": "80 bombole",
+        "peso_kg": 9600
+      },
+      {
+        "descrizione": "Additivi alimentari",
+        "quantita": "120 fusti",
+        "peso_kg": 3600
+      }
     ]
   },
   {
@@ -152,9 +252,276 @@
     "tara_kg": 4100,
     "sigillato": false,
     "contenuto": [
-      { "descrizione": "Componenti turbine eoliche", "quantita": "8 casse extra-large", "peso_kg": 16000 },
-      { "descrizione": "Sensori industriali IoT", "quantita": "600 unità", "peso_kg": 900 },
-      { "descrizione": "Cavi alta tensione", "quantita": "15 bobine", "peso_kg": 8400 }
+      {
+        "descrizione": "Componenti turbine eoliche",
+        "quantita": "8 casse extra-large",
+        "peso_kg": 16000
+      },
+      {
+        "descrizione": "Sensori industriali IoT",
+        "quantita": "600 unità",
+        "peso_kg": 900
+      },
+      {
+        "descrizione": "Cavi alta tensione",
+        "quantita": "15 bobine",
+        "peso_kg": 8400
+      }
+    ]
+  },
+  {
+    "id": "CNT-2024-011",
+    "sigla": "GNLU 224011-5",
+    "tipo": "40ft Standard",
+    "stato": "In viaggio",
+    "posizione": "MV Nexus Atlantic — Stretto di Malacca",
+    "temperatura": "Ambiente",
+    "peso_lordo_kg": 26300,
+    "tara_kg": 3600,
+    "sigillato": true,
+    "contenuto": [
+      {
+        "descrizione": "Semiconduttori industriali",
+        "quantita": "450 casse",
+        "peso_kg": 6750
+      },
+      {
+        "descrizione": "Display LCD 55 pollici",
+        "quantita": "600 unità",
+        "peso_kg": 9000
+      },
+      {
+        "descrizione": "Controller PLC Siemens",
+        "quantita": "280 unità",
+        "peso_kg": 2800
+      }
+    ]
+  },
+  {
+    "id": "CNT-2024-012",
+    "sigla": "GNLU 224012-3",
+    "tipo": "20ft Standard",
+    "stato": "In porto",
+    "posizione": "Porto di Shanghai — Banchina 22",
+    "temperatura": "Ambiente",
+    "peso_lordo_kg": 16800,
+    "tara_kg": 2200,
+    "sigillato": true,
+    "contenuto": [
+      {
+        "descrizione": "Tessuti di seta grezza",
+        "quantita": "320 balle",
+        "peso_kg": 8000
+      },
+      {
+        "descrizione": "Bottoni e fibbie in metallo",
+        "quantita": "1500 scatole",
+        "peso_kg": 3750
+      }
+    ]
+  },
+  {
+    "id": "CNT-2024-013",
+    "sigla": "GNLU 224013-1",
+    "tipo": "Reefer 40ft",
+    "stato": "In viaggio",
+    "posizione": "MV Pacific Gateway — Mare Arabico",
+    "temperatura": "-25°C",
+    "peso_lordo_kg": 24500,
+    "tara_kg": 4200,
+    "sigillato": true,
+    "contenuto": [
+      {
+        "descrizione": "Gamberi surgelati (Vietnam)",
+        "quantita": "600 casse da 15kg",
+        "peso_kg": 9000
+      },
+      {
+        "descrizione": "Filetti di pangasio congelati",
+        "quantita": "400 casse da 20kg",
+        "peso_kg": 8000
+      }
+    ]
+  },
+  {
+    "id": "CNT-2024-014",
+    "sigla": "GNLU 224014-9",
+    "tipo": "40ft High Cube",
+    "stato": "In deposito",
+    "posizione": "DEP-006 — Shanghai Bonded Warehouse",
+    "temperatura": "Ambiente",
+    "peso_lordo_kg": 21600,
+    "tara_kg": 3750,
+    "sigillato": false,
+    "contenuto": [
+      {
+        "descrizione": "Mobili in legno massello",
+        "quantita": "85 set",
+        "peso_kg": 10200
+      },
+      {
+        "descrizione": "Ceramiche decorative",
+        "quantita": "2000 pezzi",
+        "peso_kg": 4000
+      },
+      {
+        "descrizione": "Lampade in bambù artigianali",
+        "quantita": "500 unità",
+        "peso_kg": 1500
+      }
+    ]
+  },
+  {
+    "id": "CNT-2024-015",
+    "sigla": "GNLU 224015-7",
+    "tipo": "20ft Open Top",
+    "stato": "Sdoganamento",
+    "posizione": "Porto di Busan — Area doganale",
+    "temperatura": "Ambiente",
+    "peso_lordo_kg": 19200,
+    "tara_kg": 2300,
+    "sigillato": false,
+    "contenuto": [
+      {
+        "descrizione": "Blocchi di granito lavorato",
+        "quantita": "40 lastre",
+        "peso_kg": 12000
+      },
+      {
+        "descrizione": "Utensili da taglio CNC",
+        "quantita": "120 set",
+        "peso_kg": 3600
+      }
+    ]
+  },
+  {
+    "id": "CNT-2024-016",
+    "sigla": "GNLU 224016-4",
+    "tipo": "45ft Pallet Wide",
+    "stato": "In viaggio",
+    "posizione": "MV Indian Star — Canale di Suez",
+    "temperatura": "Ambiente",
+    "peso_lordo_kg": 31200,
+    "tara_kg": 4100,
+    "sigillato": true,
+    "contenuto": [
+      {
+        "descrizione": "Pannelli fotovoltaici monocristallini",
+        "quantita": "500 pannelli",
+        "peso_kg": 10000
+      },
+      {
+        "descrizione": "Inverter solari",
+        "quantita": "200 unità",
+        "peso_kg": 6000
+      },
+      {
+        "descrizione": "Strutture di montaggio in alluminio",
+        "quantita": "300 kit",
+        "peso_kg": 7500
+      }
+    ]
+  },
+  {
+    "id": "CNT-2024-017",
+    "sigla": "GNLU 224017-2",
+    "tipo": "20ft Standard",
+    "stato": "Consegnato",
+    "posizione": "Destinazione finale — Osaka, Giappone",
+    "temperatura": "Ambiente",
+    "peso_lordo_kg": 14100,
+    "tara_kg": 2200,
+    "sigillato": false,
+    "contenuto": [
+      {
+        "descrizione": "Componentistica robotica",
+        "quantita": "180 casse",
+        "peso_kg": 5400
+      },
+      {
+        "descrizione": "Sensori di pressione industriali",
+        "quantita": "800 unità",
+        "peso_kg": 2400
+      },
+      {
+        "descrizione": "Motori stepper NEMA",
+        "quantita": "1200 unità",
+        "peso_kg": 3600
+      }
+    ]
+  },
+  {
+    "id": "CNT-2024-018",
+    "sigla": "GNLU 224018-0",
+    "tipo": "Reefer 20ft",
+    "stato": "In preparazione",
+    "posizione": "DEP-004 — Singapore Global Hub",
+    "temperatura": "+2°C",
+    "peso_lordo_kg": 10800,
+    "tara_kg": 3100,
+    "sigillato": false,
+    "contenuto": [
+      {
+        "descrizione": "Estratti vegetali farmaceutici",
+        "quantita": "300 flaconi",
+        "peso_kg": 1800
+      },
+      {
+        "descrizione": "Integratori alimentari biologici",
+        "quantita": "1500 confezioni",
+        "peso_kg": 3000
+      }
+    ]
+  },
+  {
+    "id": "CNT-2024-019",
+    "sigla": "GNLU 224019-8",
+    "tipo": "40ft Standard",
+    "stato": "In viaggio",
+    "posizione": "MV Gulf Express — Oceano Atlantico",
+    "temperatura": "Ambiente",
+    "peso_lordo_kg": 25800,
+    "tara_kg": 3600,
+    "sigillato": true,
+    "contenuto": [
+      {
+        "descrizione": "Tubi in acciaio inossidabile",
+        "quantita": "200 fasci",
+        "peso_kg": 14000
+      },
+      {
+        "descrizione": "Valvole industriali",
+        "quantita": "350 unità",
+        "peso_kg": 5250
+      }
+    ]
+  },
+  {
+    "id": "CNT-2024-020",
+    "sigla": "GNLU 224020-6",
+    "tipo": "20ft Standard",
+    "stato": "In deposito",
+    "posizione": "DEP-001 — GlobalNexus Hub Milano",
+    "temperatura": "Ambiente",
+    "peso_lordo_kg": 13500,
+    "tara_kg": 2200,
+    "sigillato": true,
+    "contenuto": [
+      {
+        "descrizione": "Scarpe sportive (assortite)",
+        "quantita": "4000 paia",
+        "peso_kg": 4800
+      },
+      {
+        "descrizione": "Abbigliamento tecnico outdoor",
+        "quantita": "2500 capi",
+        "peso_kg": 3750
+      },
+      {
+        "descrizione": "Zaini e borse da viaggio",
+        "quantita": "1000 unità",
+        "peso_kg": 2000
+      }
     ]
   }
-]
+]

@@ -1,8 +1,7 @@
 [
   {
     "id": "ORD-2024-0001",
-    "cliente": "TechWorld GmbH",
-    "origine": "Shanghai, Cina",
+    "cliente": "CLT-001",
     "destinazione": "Amburgo, Germania",
     "peso_kg": 12500,
     "volume_m3": 48,
@@ -10,12 +9,12 @@
     "stato": "In transito",
     "data_ordine": "2024-01-08",
     "data_consegna_prevista": "2024-02-15",
-    "valore_usd": 85000
+    "valore_usd": 85000,
+    "metodo_consegna": "CNT-2024-001"
   },
   {
     "id": "ORD-2024-0002",
-    "cliente": "AutoParts SpA",
-    "origine": "Milano, Italia",
+    "cliente": "CLT-002",
     "destinazione": "Toronto, Canada",
     "peso_kg": 3200,
     "volume_m3": 14,
@@ -23,12 +22,12 @@
     "stato": "Consegnato",
     "data_ordine": "2024-01-10",
     "data_consegna_prevista": "2024-01-13",
-    "valore_usd": 42000
+    "valore_usd": 42000,
+    "metodo_consegna": "CNT-2024-001"
   },
   {
     "id": "ORD-2024-0003",
-    "cliente": "MedSupply Corp",
-    "origine": "Rotterdam, Paesi Bassi",
+    "cliente": "CLT-003",
     "destinazione": "Lagos, Nigeria",
     "peso_kg": 8750,
     "volume_m3": 32,
@@ -36,12 +35,12 @@
     "stato": "In attesa sdoganamento",
     "data_ordine": "2024-01-15",
     "data_consegna_prevista": "2024-02-28",
-    "valore_usd": 134000
+    "valore_usd": 134000,
+    "metodo_consegna": "CNT-2024-005"
   },
   {
     "id": "ORD-2024-0004",
-    "cliente": "Sunrise Electronics Ltd",
-    "origine": "Shenzhen, Cina",
+    "cliente": "CLT-018",
     "destinazione": "Los Angeles, USA",
     "peso_kg": 22100,
     "volume_m3": 86,
@@ -49,12 +48,12 @@
     "stato": "In transito",
     "data_ordine": "2024-01-18",
     "data_consegna_prevista": "2024-03-05",
-    "valore_usd": 290000
+    "valore_usd": 290000,
+    "metodo_consegna": "CNT-2024-003"
   },
   {
     "id": "ORD-2024-0005",
-    "cliente": "PharmaBridge SA",
-    "origine": "Basilea, Svizzera",
+    "cliente": "CLT-016",
     "destinazione": "Singapore",
     "peso_kg": 650,
     "volume_m3": 4,
@@ -62,12 +61,12 @@
     "stato": "Consegnato",
     "data_ordine": "2024-01-20",
     "data_consegna_prevista": "2024-01-22",
-    "valore_usd": 580000
+    "valore_usd": 580000,
+    "metodo_consegna": "CNT-2024-008"
   },
   {
     "id": "ORD-2024-0006",
-    "cliente": "AgriExport Brasil",
-    "origine": "Santos, Brasile",
+    "cliente": "CLT-017",
     "destinazione": "Barcellona, Spagna",
     "peso_kg": 45000,
     "volume_m3": 185,
@@ -75,12 +74,12 @@
     "stato": "In carico",
     "data_ordine": "2024-01-22",
     "data_consegna_prevista": "2024-03-10",
-    "valore_usd": 67000
+    "valore_usd": 67000,
+    "metodo_consegna": "CNT-2024-006"
   },
   {
     "id": "ORD-2024-0007",
-    "cliente": "FashionForward Group",
-    "origine": "Hanoi, Vietnam",
+    "cliente": "CLT-007",
     "destinazione": "Parigi, Francia",
     "peso_kg": 4200,
     "volume_m3": 22,
@@ -88,12 +87,12 @@
     "stato": "In transito",
     "data_ordine": "2024-01-25",
     "data_consegna_prevista": "2024-01-28",
-    "valore_usd": 125000
+    "valore_usd": 125000,
+    "metodo_consegna": "CNT-2024-004"
   },
   {
     "id": "ORD-2024-0008",
-    "cliente": "OilPipe Engineering",
-    "origine": "Aberdeen, UK",
+    "cliente": "CLT-008",
     "destinazione": "Abu Dhabi, UAE",
     "peso_kg": 78000,
     "volume_m3": 310,
@@ -101,12 +100,12 @@
     "stato": "In preparazione",
     "data_ordine": "2024-01-28",
     "data_consegna_prevista": "2024-03-20",
-    "valore_usd": 420000
+    "valore_usd": 420000,
+    "metodo_consegna": "CNT-2024-002"
   },
   {
     "id": "ORD-2024-0009",
-    "cliente": "FoodTrade Pty Ltd",
-    "origine": "Melbourne, Australia",
+    "cliente": "CLT-009",
     "destinazione": "Tokyo, Giappone",
     "peso_kg": 16800,
     "volume_m3": 62,
@@ -114,12 +113,12 @@
     "stato": "Consegnato",
     "data_ordine": "2023-12-15",
     "data_consegna_prevista": "2024-01-25",
-    "valore_usd": 93000
+    "valore_usd": 93000,
+    "metodo_consegna": "CNT-2024-009"
   },
   {
     "id": "ORD-2024-0010",
-    "cliente": "NordBau GmbH",
-    "origine": "Stoccolma, Svezia",
+    "cliente": "CLT-010",
     "destinazione": "Nairobi, Kenya",
     "peso_kg": 31000,
     "volume_m3": 124,
@@ -127,12 +126,12 @@
     "stato": "In transito",
     "data_ordine": "2024-02-01",
     "data_consegna_prevista": "2024-03-30",
-    "valore_usd": 188000
+    "valore_usd": 188000,
+    "metodo_consegna": "CNT-2024-010"
   },
   {
     "id": "ORD-2024-0011",
-    "cliente": "LuxGoods Monaco",
-    "origine": "Milano, Italia",
+    "cliente": "CLT-011",
     "destinazione": "Dubai, UAE",
     "peso_kg": 890,
     "volume_m3": 6,
@@ -140,12 +139,12 @@
     "stato": "Consegnato",
     "data_ordine": "2024-02-03",
     "data_consegna_prevista": "2024-02-05",
-    "valore_usd": 1250000
+    "valore_usd": 1250000,
+    "metodo_consegna": "CNT-2024-007"
   },
   {
     "id": "ORD-2024-0012",
-    "cliente": "Chemco India Pvt Ltd",
-    "origine": "Mumbai, India",
+    "cliente": "CLT-012",
     "destinazione": "Houston, USA",
     "peso_kg": 52000,
     "volume_m3": 205,
@@ -153,12 +152,12 @@
     "stato": "Bloccato dogana",
     "data_ordine": "2024-02-05",
     "data_consegna_prevista": "2024-04-10",
-    "valore_usd": 312000
+    "valore_usd": 312000,
+    "metodo_consegna": "CNT-2024-005"
   },
   {
     "id": "ORD-2024-0013",
-    "cliente": "UrbanMobility SA",
-    "origine": "Francoforte, Germania",
+    "cliente": "CLT-013",
     "destinazione": "Santiago, Cile",
     "peso_kg": 9800,
     "volume_m3": 38,
@@ -166,12 +165,12 @@
     "stato": "In preparazione",
     "data_ordine": "2024-02-08",
     "data_consegna_prevista": "2024-04-15",
-    "valore_usd": 145000
+    "valore_usd": 145000,
+    "metodo_consegna": "CNT-2024-010"
   },
   {
     "id": "ORD-2024-0014",
-    "cliente": "Digital Nomads Corp",
-    "origine": "Taipei, Taiwan",
+    "cliente": "CLT-014",
     "destinazione": "Amsterdam, Paesi Bassi",
     "peso_kg": 2100,
     "volume_m3": 11,
@@ -179,12 +178,12 @@
     "stato": "In transito",
     "data_ordine": "2024-02-10",
     "data_consegna_prevista": "2024-02-13",
-    "valore_usd": 78000
+    "valore_usd": 78000,
+    "metodo_consegna": "CNT-2024-004"
   },
   {
     "id": "ORD-2024-0015",
-    "cliente": "GreenEnergy Polska",
-    "origine": "Danzica, Polonia",
+    "cliente": "CLT-015",
     "destinazione": "Cape Town, Sudafrica",
     "peso_kg": 27500,
     "volume_m3": 108,
@@ -192,6 +191,85 @@
     "stato": "In transito",
     "data_ordine": "2024-02-12",
     "data_consegna_prevista": "2024-04-20",
-    "valore_usd": 234000
+    "valore_usd": 234000,
+    "metodo_consegna": "CNT-2024-009"
+  },
+  {
+    "id": "ORD-2024-0016",
+    "cliente": "CLT-037",
+    "destinazione": "Osaka, Giappone",
+    "peso_kg": 18500,
+    "volume_m3": 72,
+    "tipo_trasporto": "Marittimo",
+    "stato": "In transito",
+    "data_ordine": "2024-02-15",
+    "data_consegna_prevista": "2024-04-01",
+    "valore_usd": 195000,
+    "metodo_consegna": "CNT-2024-011"
+  },
+  {
+    "id": "ORD-2024-0017",
+    "cliente": "CLT-040",
+    "destinazione": "Busan, Corea del Sud",
+    "peso_kg": 21000,
+    "volume_m3": 85,
+    "tipo_trasporto": "Marittimo",
+    "stato": "In attesa sdoganamento",
+    "data_ordine": "2024-02-18",
+    "data_consegna_prevista": "2024-03-25",
+    "valore_usd": 87000,
+    "metodo_consegna": "CNT-2024-013"
+  },
+  {
+    "id": "ORD-2024-0018",
+    "cliente": "CLT-042",
+    "destinazione": "Marsiglia, Francia",
+    "peso_kg": 28700,
+    "volume_m3": 112,
+    "tipo_trasporto": "Marittimo",
+    "stato": "In transito",
+    "data_ordine": "2024-02-20",
+    "data_consegna_prevista": "2024-04-10",
+    "valore_usd": 340000,
+    "metodo_consegna": "CNT-2024-016"
+  },
+  {
+    "id": "ORD-2024-0019",
+    "cliente": "CLT-038",
+    "destinazione": "Vancouver, Canada",
+    "peso_kg": 15200,
+    "volume_m3": 64,
+    "tipo_trasporto": "Marittimo",
+    "stato": "In preparazione",
+    "data_ordine": "2024-02-22",
+    "data_consegna_prevista": "2024-04-18",
+    "valore_usd": 112000,
+    "metodo_consegna": "CNT-2024-014"
+  },
+  {
+    "id": "ORD-2024-0020",
+    "cliente": "CLT-043",
+    "destinazione": "Santos, Brasile",
+    "peso_kg": 19600,
+    "volume_m3": 78,
+    "tipo_trasporto": "Marittimo",
+    "stato": "In transito",
+    "data_ordine": "2024-02-25",
+    "data_consegna_prevista": "2024-04-25",
+    "valore_usd": 156000,
+    "metodo_consegna": "CNT-2024-019"
+  },
+  {
+    "id": "ORD-2024-0021",
+    "cliente": "CLT-045",
+    "destinazione": "Rotterdam, Paesi Bassi",
+    "peso_kg": 11800,
+    "volume_m3": 45,
+    "tipo_trasporto": "Marittimo",
+    "stato": "Consegnato",
+    "data_ordine": "2024-02-28",
+    "data_consegna_prevista": "2024-04-05",
+    "valore_usd": 268000,
+    "metodo_consegna": "CNT-2024-017"
   }
 ]

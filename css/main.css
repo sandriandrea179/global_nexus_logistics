@@ -509,6 +509,33 @@ a { color: inherit; text-decoration: none; }
 .progress-label { font-size: 12px; font-weight: 600; color: var(--text-secondary); min-width: 36px; text-align: right; }
 
 /* ============================================================
+   HEADER LOGOUT BUTTON
+   ============================================================ */
+.header-logout-btn {
+  display: flex; align-items: center; gap: 6px;
+  padding: 6px 14px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  color: var(--text-secondary);
+  font-family: 'Inter', sans-serif;
+  font-size: 12px; font-weight: 500;
+  cursor: pointer;
+  transition: all var(--ease);
+  white-space: nowrap;
+}
+
+.header-logout-btn:hover {
+  background: rgba(239,68,68,0.12);
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.header-logout-btn span {
+  font-size: 14px;
+}
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 900px) {

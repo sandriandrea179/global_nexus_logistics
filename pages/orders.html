@@ -23,6 +23,7 @@
       <span class="nav-label">Gestione</span>
       <a class="nav-link" href="users.html" data-page="users"><span class="nav-icon">👥</span> Area Utenti</a>
       <a class="nav-link" href="orders.html" data-page="orders"><span class="nav-icon">📦</span> Area Ordini</a>
+      <a class="nav-link" href="clienti.html" data-page="clienti"><span class="nav-icon">🏢</span> Area Clienti</a>
       <a class="nav-link" href="vehicles.html" data-page="vehicles"><span class="nav-icon">🚚</span> Area Mezzi</a>
       <a class="nav-link" href="warehouses.html" data-page="warehouses"><span class="nav-icon">🏭</span> Area Depositi</a>
       <a class="nav-link" href="containers.html" data-page="containers"><span class="nav-icon">🗃️</span> Area Container</a>
@@ -47,6 +48,7 @@
           <div class="user-avatar" id="currentUserInitial">A</div>
           <span class="user-name" id="currentUser">admin</span>
         </div>
+        <button class="header-logout-btn" onclick="doLogout()"><span>⏻</span> Esci</button>
       </div>
     </header>
 
@@ -97,27 +99,48 @@
       return '$' + n;
     }
 
-    var columns = [
-      { key: 'id',                    label: 'N° Ordine' },
-      { key: 'cliente',               label: 'Cliente' },
-      { key: 'origine',               label: 'Origine' },
-      { key: 'destinazione',          label: 'Destinazione' },
-      { key: 'peso_kg',               label: 'Peso (kg)', render: function(v){ return (v||0).toLocaleString('it-IT') + ' kg'; } },
-      { key: 'tipo_trasporto',        label: 'Tipo', render: function(v){ var map={'Marittimo':'badge-info','Aereo':'badge-gold','Stradale':'badge-secondary'}; return '<span class="badge '+(map[v]||'badge-secondary')+'">'+v+'</span>'; } },
-      { key: 'data_ordine',           label: 'Data Ordine' },
-      { key: 'data_consegna_prevista',label: 'Consegna Prevista' },
-      { key: 'valore_usd',            label: 'Valore', render: function(v){ return formatUSD(v); } },
-      { key: 'stato',                 label: 'Stato', render: function(v){ return statusBadge(v); } }
-    ];
+    /* Carica anagrafica clienti per risolvere gli ID */
+    function loadClienti(callback) {
+      if (window.GNL_DATA && window.GNL_DATA.clienti) {
+        callback(window.GNL_DATA.clienti);
+        return;
+      }
+      $.getJSON('../data/clienti.json')
+        .done(function(data){ callback(data); })
+        .fail(function(){ callback([]); });
+    }
 
-    loadTable('../data/orders.json', '#tableContainer', columns, function (data) {
-      var transit   = data.filter(function(o){ return o.stato && o.stato.indexOf('transito') !== -1; }).length;
-      var delivered = data.filter(function(o){ return o.stato === 'Consegnato'; }).length;
-      var total     = data.reduce(function(s,o){ return s + (o.valore_usd||0); }, 0);
-      $('#statTotal').text(data.length);
-      $('#statTransit').text(transit);
-      $('#statDelivered').text(delivered);
-      $('#statValue').text('$' + (total/1000000).toFixed(1) + 'M');
+    loadClienti(function(clientiData) {
+      /* Mappa ID → nome azienda */
+      var clientiMap = {};
+      clientiData.forEach(function(c){ clientiMap[c.id] = c.nome_azienda; });
+
+      var columns = [
+        { key: 'id',                    label: 'N° Ordine' },
+        { key: 'cliente',               label: 'Cliente' },
+        { key: 'destinazione',          label: 'Destinazione' },
+        { key: 'metodo_consegna',       label: 'Metodo Consegna', render: function(v){
+            if (!v) return '—';
+            return '<span class="badge badge-purple">' + escapeHtml(v) + '</span>';
+          }
+        },
+        { key: 'peso_kg',               label: 'Peso (kg)', render: function(v){ return (v||0).toLocaleString('it-IT') + ' kg'; } },
+        { key: 'tipo_trasporto',        label: 'Tipo', render: function(v){ var map={'Marittimo':'badge-info','Aereo':'badge-gold','Stradale':'badge-secondary'}; return '<span class="badge '+(map[v]||'badge-secondary')+'">'+v+'</span>'; } },
+        { key: 'data_ordine',           label: 'Data Ordine' },
+        { key: 'data_consegna_prevista',label: 'Consegna Prevista' },
+        { key: 'valore_usd',            label: 'Valore', render: function(v){ return formatUSD(v); } },
+        { key: 'stato',                 label: 'Stato', render: function(v){ return statusBadge(v); } }
+      ];
+
+      loadTable('../data/orders.json', '#tableContainer', columns, function (data) {
+        var transit   = data.filter(function(o){ return o.stato && o.stato.indexOf('transito') !== -1; }).length;
+        var delivered = data.filter(function(o){ return o.stato === 'Consegnato'; }).length;
+        var total     = data.reduce(function(s,o){ return s + (o.valore_usd||0); }, 0);
+        $('#statTotal').text(data.length);
+        $('#statTransit').text(transit);
+        $('#statDelivered').text(delivered);
+        $('#statValue').text('$' + (total/1000000).toFixed(1) + 'M');
+      });
     });
   });
 </script>
